@@ -25,4 +25,21 @@ bloque_param(10) { |variable, var2|
     puts "Soy un bloque! y tu número #{variable} y el otro #{var2}"
 }
 
-foo(9, 3)
+foo(9)
+# foo(9, 10) # Con error
+
+bloque_lambda = lambda { puts "Soy un bloque lambda" }
+bloque_proc = Proc.new { puts "Soy un bloque Proc" }
+
+bloque_lambda.call
+bloque_proc.call
+
+params_lambda = lambda { |x, y| x + y }
+params_proc = proc { |x, y| x + y }
+
+# puts params_lambda.call(1) # Error: número de parámetros incorrectos
+puts params_lambda.call(1, 2)
+# puts params_lambda.call(1, 2, 3) # Error: número de parámetros incorrectos
+# puts params_proc.call(1) # Error: y es nil
+puts params_proc.call(1, 2)
+puts params_proc.call(1, 2, 3)
