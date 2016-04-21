@@ -2,6 +2,13 @@
 <h2>Mision</h2>
 <p>Nombre: <%= @name %></p>
 <p>Apellido: <%= @last %></p>
+<h4>Variables de entorno</h4>
+<p>Controlador: <%= @controller %></p>
+<p>Action: <%= @action %></p>
+<p>Get: <%= @is_get %></p>
+<p>Post: <%= @is_post %></p>
+<p>Http request: <%= @is_http_request %></p>
+<p><%= "#{request.protocol}..#{request.host_with_port}..#{request.fullpath}" %></p>
 <h4>Array</h4>
 <p>
   <% if @arr.empty? %>

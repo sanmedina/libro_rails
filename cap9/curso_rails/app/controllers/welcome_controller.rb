@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   before_filter :init_title
+  # Enable POST test
+  skip_before_action :verify_authenticity_token, :only => :quienes_somos
   # Formats DRY way
   respond_to :html
   # :except DOESN'T WORK!!!!
@@ -87,15 +89,24 @@ class WelcomeController < ApplicationController
     
     # ----------- REDIRECT_TO
     
-     # Call root page
-     #redirect_to root_path
+    # Call root page
+    #redirect_to root_path
      
-     # ----------- PARAMETERS
+    # ----------- PARAMETERS
      
-     # Read parameters
-     @name = params[:name] ? params[:name] : "NN"
-     @last = params[:last] ? params[:last] : "NL"
-     @arr = params[:arr] ? params[:arr] : []
+    # Read parameters
+    @name = params[:name] ? params[:name] : "NN"
+    @last = params[:last] ? params[:last] : "NL"
+    @arr = params[:arr] ? params[:arr] : []
+     
+    # ----------- ENVIRONMENT VARIABLES
+     
+    @action = action_name
+    @controller = controller_name
+    @is_get = request.get?
+    @is_post = request.post?
+    # DOESN'T WORK!!!
+    @is_http_request = request.xml_http_request? || "."
   end
   
   def contacto
