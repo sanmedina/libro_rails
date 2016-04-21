@@ -8,6 +8,18 @@
 </head>
 <body>
 <h1>Plantilla application</h1>
+<!--LINKS-->
+<ul>
+  <li><%= link_to "Inicio", :controller => "home", :action => "index" %></li>
+  <li><%= link_to "Quiénes somos", :controller => "home", :action => "quienes_somos" %></li>
+  <li><%= link_to "Localización", :controller => "home", :action => "localizacion" %></li>
+  <!--Link with parameter-->
+  <li><%= link_to "Servicios", :controller => "home", :action => "servicios", :param => "lolo" %></li>
+  <!--Link with options-->
+  <li><%= link_to "Contacto", {:controller => "home", :action => "contacto", :id => "000"}, :title => "Info" %></li>
+  <!--External link-->
+  <li><%= link_to "9gag", "http://www.9gag.com", :title => "Memes" %></li>
+</ul>
 <%= yield %>
 
 </body>
