@@ -19,6 +19,14 @@
   <li><%= link_to "Contacto", {:controller => "home", :action => "contacto", :id => "000"}, :title => "Info" %></li>
   <!--External link-->
   <li><%= link_to "9gag", "http://www.9gag.com", :title => "Memes" %></li>
+  
+  <!--Conditional links-->
+  <!--DOESN'T WORK!!!-->
+  <li><%= link_to_if(true, "Iniciar sesión", :action => "index") do
+    link_to "Registro", :action => "servicios"
+  end %></li>
+  <li><%= link_to_if(false, "No me ven", :action => "index") %></li>
+  <li><%= link_to_unless(true, "A mi tampoco", :action => "index") %></li>
 </ul>
 <%= yield %>
 
