@@ -27,6 +27,9 @@
   end %></li>
   <li><%= link_to_if(false, "No me ven", :action => "index") %></li>
   <li><%= link_to_unless(true, "A mi tampoco", :action => "index") %></li>
+  
+  <!--Show link if it's not the current-->
+  <li><%= link_to_unless_current "Otro contacto", :action => "contacto" %></li>
 </ul>
 <%= yield %>
 
