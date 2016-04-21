@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'call_external/index'
+
   get 'welcome/index'
   get 'welcome/quienes_somos'
   get 'welcome/contacto'

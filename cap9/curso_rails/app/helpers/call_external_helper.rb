@@ -1,0 +1,2 @@
+module CallExternalHelper
+end
