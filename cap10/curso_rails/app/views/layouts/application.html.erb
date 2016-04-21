@@ -30,6 +30,9 @@
   
   <!--Show link if it's not the current-->
   <li><%= link_to_unless_current "Otro contacto", :action => "contacto" %></li>
+  
+  <!--Mail link-->
+  <li><%= mail_to "foo@mail.com", nil, :subject => "Sin asunto" %></li>
 </ul>
 <%= yield %>
 
