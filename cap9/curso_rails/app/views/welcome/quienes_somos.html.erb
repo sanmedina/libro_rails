@@ -9,6 +9,8 @@
 <p>Post: <%= @is_post %></p>
 <p>Http request: <%= @is_http_request %></p>
 <p><%= "#{request.protocol}..#{request.host_with_port}..#{request.fullpath}" %></p>
+<h4>Flash</h4>
+<p>:notice = <%= flash[:notice] %></p>
 <h4>Array</h4>
 <p>
   <% if @arr.empty? %>

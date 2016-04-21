@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
   
   def init_title
     @title = nil
+    flash[:notice] = "Nada" until flash[:notice]
   end
   
   def index
@@ -81,7 +82,10 @@ class WelcomeController < ApplicationController
     # ----------- PARAMETERS
     
     # Add parameter
-    redirect_to :action => :quienes_somos, :name => "Fernando", :last => "Medina", :arr => [0, 1, 2]
+    #redirect_to :action => :quienes_somos, :name => "Fernando", :last => "Medina", :arr => [0, 1, 2]
+    
+    # ----------- FLASH
+    flash[:notice] = "Hey! Uno"
   end
   
   def quienes_somos
