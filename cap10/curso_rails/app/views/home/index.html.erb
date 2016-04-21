@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
+<h1><%= @title %></h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<!--HTML Form-->
+<!--<form action="/home/index" class="buttone_to" method="post">-->
+<!--  <div>-->
+<!--    <input type="submit" value="Enviar">-->
+<!--    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">-->
+<!--  </div>-->
+<!--</form>-->
+
+<!--Button tag and parameters-->
+<%= button_to "Enviar", :action => "index", :param => "Hola" %>
+
+<!--Form tag-->
+<%= form_tag do %>
+  <%= submit_tag("EnviarForm") %>
+<% end %>

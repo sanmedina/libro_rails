@@ -5,7 +5,11 @@ class HomeController < ApplicationController
   #layout "application", :except => :contacto
   
   def index
-    @title = "Index"
+    if request.get?
+      @title = "Index - GET"
+    else
+      @title = "Index - POST"
+    end
   end
 
   def quienes_somos
