@@ -1,2 +1,14 @@
 <h1><%= @title %></h1>
 <h2>Mision</h2>
+<p>Nombre: <%= @name %></p>
+<p>Apellido: <%= @last %></p>
+<h4>Array</h4>
+<p>
+  <% if @arr.empty? %>
+    Empty
+  <% else %>
+    <% @arr.each do |val| %>
+    <%= val %>
+    <% end %>
+  <% end %>
+</p>

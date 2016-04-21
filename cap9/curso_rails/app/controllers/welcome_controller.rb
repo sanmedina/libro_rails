@@ -77,13 +77,25 @@ class WelcomeController < ApplicationController
     #end
     
     # ----------- PARAMETERS
+    
+    # Add parameter
+    redirect_to :action => :quienes_somos, :name => "Fernando", :last => "Medina", :arr => [0, 1, 2]
   end
   
   def quienes_somos
     @title = "Quienes somos"
     
+    # ----------- REDIRECT_TO
+    
      # Call root page
      #redirect_to root_path
+     
+     # ----------- PARAMETERS
+     
+     # Read parameters
+     @name = params[:name] ? params[:name] : "NN"
+     @last = params[:last] ? params[:last] : "NL"
+     @arr = params[:arr] ? params[:arr] : []
   end
   
   def contacto
