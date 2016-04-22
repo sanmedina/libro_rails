@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get 'home/quienes_somos'
 
-  get 'home/contacto'
+  #get 'home/contacto'
+  match 'home/contacto', :to => 'home#contacto', :via => [:get, :post]
 
   get 'home/servicios'
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,6 +6,14 @@ class HomeController < ApplicationController
   end
 
   def contacto
+    if request.post?
+      #raise
+      Nombres.add=(params[:nombre])
+      redirect_to root_path
+    else
+      render :text => (Nombres.get.include?(params[:nombre]) ? "Si" : "No")
+    end
+    
   end
 
   def servicios
