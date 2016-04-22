@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   #get 'home/contacto'
   match 'home/contacto', :to => 'home#contacto', :via => [:get, :post]
 
-  get 'home/servicios'
+  #get 'home/servicios'
+  match 'home/servicios', :to => 'home#servicios', :via => [:get, :post]
 
   get 'home/localizacion'
 

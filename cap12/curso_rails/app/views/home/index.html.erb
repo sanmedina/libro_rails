@@ -14,3 +14,10 @@
   <%= text_field_tag "nombre" %>
   <%= submit_tag "Enviar" %>
 <% end %>
+
+<h2>subir archivo</h2>
+<%= form_tag("/home/servicios", :multipart => true) do %>
+  <%= label_tag :archivo %>
+  <%= file_field_tag :archivo %>
+  <%= submit_tag "Enviar" %>
+<% end %>
