@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def contacto
+    @id = params[:id] || "nn"
   end
 
   def localizacion

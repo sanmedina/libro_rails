@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'errors/route'
+
   get 'home/index'
 
   get 'home/quienes_somos'
@@ -16,7 +18,21 @@ Rails.application.routes.draw do
   # Super match
   #match ':controller(/:action(/:id))(.:format)', :via => :get
   
+  # With parameter
   match 'servicios/:id' => 'home#servicios', :via => [:post, :get]
+  # Redirecting
+  match 'servs/:id' => redirect('servicios/%{id}'), :via => [:post, :get]
+  # Special redirecting
+  match 'servnom/:nombre' => redirect { |params| "servicios/#{params[:nombre].capitalize}" }, :via => [:post, :get]
+  # Parameters constrains
+  match 'contact/:id' => 'home#contacto', :constraints => { :id => /\d{1,3}/ }, :via => :get
+  # Class constraint DOESN'T WORD!!!
+  #match 'logged' => 'home#index', :constraints => LoggedUser, :via => :get
+  
+  # Bad routes to index
+  #match '*a' => 'home#index', :via => [:get, :post, :update, :delete]
+  # Bad routes to erroes
+  match '*a' => 'errors#route', :via => [:get, :post, :update, :delete]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
