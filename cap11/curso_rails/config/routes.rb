@@ -8,6 +8,15 @@ Rails.application.routes.draw do
   get 'home/localizacion'
 
   get 'home/servicios'
+  
+  # Using match
+  match "servicios" => "home#servicios", :via => [:get, :post]
+  # Custom route name
+  match 'quienes' => 'home#quienes_somos', :as => 'quien', :via => :get
+  # Super match
+  #match ':controller(/:action(/:id))(.:format)', :via => :get
+  
+  match 'servicios/:id' => 'home#servicios', :via => [:post, :get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

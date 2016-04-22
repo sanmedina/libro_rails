@@ -12,5 +12,6 @@ class HomeController < ApplicationController
   end
 
   def servicios
+    @id = params[:id] || "NN"
   end
 end
