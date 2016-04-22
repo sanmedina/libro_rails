@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   # Bad routes to index
   #match '*a' => 'home#index', :via => [:get, :post, :update, :delete]
   # Bad routes to erroes
-  match '*a' => 'errors#route', :via => [:get, :post, :update, :delete]
+  match '*a' => 'errors#route', :via => :all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
